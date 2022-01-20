@@ -1,16 +1,8 @@
 from preprocessing import *
-from matching_sort import *
+from matching import *
 import re
 
-# img_name = r'IMG_20210831_154439.jpg' #Multi-relax
-# img_name = r'20210831_130748.jpg'
-# img_name = r'20210831_130746.jpg' #Diflucan
-# img_name = r'IMG_20210831_172502.jpg' #Clindasol
-img_name = r'20210831_154736.jpg' 
-# img_name = r'20210831_130526.jpg' #Cholerose
-# img_name = r'20210831_144051.jpg' #Vidrop
-# img_name = r'20210831_132304.jpg' #Milga
-# img_name = r'IMG_20210831_132645.jpg' #Depofort
+img_name = r'IMG_20210831_154439.jpg' #Multi-relax
 img_path = r'D:\drug captures\test'
 # img_path = r'D:\drug captures\huawei y5II'
 json_fname = r'drug dictionary.json'
@@ -18,11 +10,6 @@ json_path = r'D:\drug captures'
 file_name = r'drug list'
 file_path = r'D:\drug captures'
 res = 1000
-
-# Aggregate drug data and update json dictionary
-# agg_drug_data(file_path,file_name)
-# create_json_dict(file_path,file_name,json_path,json_fname)
-
 
 # Loading data frame of drug data
 drug_df = load_drug_data(file_path,file_name)
