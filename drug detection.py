@@ -39,11 +39,11 @@ except:
 
 # Add space before numbers if after a 3-chars word or before unit such as mg/gm
 if len(ocr_list) != 0:
-    ocr_list = [re.sub(r"(\d*\d)([m,g])",r"\1 \2", elem) for elem in ocr_list]
-    ocr_list = [re.sub(r"(\S{3})(\d)", r"\1 \2", elem) for elem in ocr_list]
-    ocr_list = [elem.replace('0 0','00') for elem in ocr_list]
-    ocr_list = [val.replace('?','') if '?' in val else val for val in ocr_list]
+    for elem in ocr_list:
+        re.sub(r"(\d*\d)([m,g])",r"\1 \2", elem)
+        re.sub(r"(\S{3})(\d)", r"\1 \2", elem)
     ocr_string = ' '.join(ocr_list)
+    ocr_string = ocr_string.replace('?','')
 
     # Fuzzy matching and spelling correction
     fuzzy_text = fuzzy_match(drug_df, ocr_list, ocr_string, json_path,json_fname)
