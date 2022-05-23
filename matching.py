@@ -207,11 +207,7 @@ def get_med_data(fuzzy_text,drug_df):
         d_size: Drug pack size.
     """
     # Initializing variables
-    d_idx = None
-    d_name = None
-    d_dose = None
-    d_type = None
-    d_size = None
+    d_idx, d_name, d_dose, d_type, d_size = None, None, None, None, None
 
     # Get index of matched fuzzy text
     if fuzzy_text != None:
